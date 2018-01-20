@@ -19,20 +19,30 @@ userData.on("child_added",
 )
 
 function createEntry(snapshot){
-    var startDate = moment([
-        snapshot.start.getMonth(),
-    ])
-    console.log(startDate)
+//    var startDate = moment([
+//        snapshot.start.getMonth(),
+//   ])
+//    console.log(startDate)
+    var elapsedMonthsMinus = moment(snapshot.start, "MMDDYYYY").diff(moment(), "months")
+    console.log(elapsedMonthsMinus)
+    var elapsedMonthsPlus = elapsedMonthsMinus * -1;
+    console.log(elapsedMonthsPlus)
+    var moneyMade = elapsedMonthsPlus * parseInt(snapshot.pay)
+    console.log(moneyMade)
     var row = $("<tr>")
     var name = $("<td>")
     var start = $("<td>")
     var pay = $("<td>")
     var role = $("<td>")
+    var money = $("<tc>")
+    var elapsed = $("<td>")
     name.text(snapshot.name)
     start.text(snapshot.start)
     pay.text(snapshot.pay)
     role.text(snapshot.role)
-    row.append(name, role, "<td>N/A</td>", pay, "<td>N/A</td>")
+    money.text(moneyMade);
+    elapsed.text(elapsedMonthsPlus)
+    row.append(name, role, elapsed, pay, money)
     return row;
 }
 
