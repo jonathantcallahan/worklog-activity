@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+            <div class="container">
+                    <div class="row">
+                        <div class="jumbotron">
+                            <h1 id="page_heading">Employee Data Management</h1>
+                            <p id="subtitle">A Comprehensive Directory of Employee Billable Hours</p>            
+                        </div>
+                        <div id="dataTable" class="row"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Current Employees</h3>
+                            </div>
+                            <div class="panel-body">
+                                <!-- Tables -->
+                                <table class="table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" id="head_empNam">Employee Name</th>
+                                            <th scope="col" id="head_role">Role</th>
+                                            <th scope="col" id="head_monthsWorked">Months Worked</th>
+                                            <th scope="col" id="head_rate">Monthly Rate ($)</th>
+                                            <th scope="col" id="head_Billed">Total Billed ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table">                               
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                      
+                    </div>
+        
+                    <!---start of user input fields -->
+                    <div class="row">
+                        <div id="dataTable" class="row"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Add Employee</h3>
+                            </div>
+                            <div class="panel-body"></div>
+        
+                                <form>
+                                    <div class="form-group">
+                                        <label for="input_employeeName" >Employee Name</label>
+                                        <input type="employeeName" class="form-control" id="input-name" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input_role">Role</label>
+                                        <input type="role" class="form-control" id="input-role" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="start_date">Start Date</label>
+                                            <input type="rate" class="form-control" id="input-date" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="role">Employee Pay Rate</label>
+                                            <input type="rate" class="form-control" id="input-pay" placeholder="">
+                                    </div>
+                                        <button type="submit" id="submit" class="btn btn-default">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <script src="moment.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/af.js"></script>
+            <script
+                src="https://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                crossorigin="anonymous"></script>
+            <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+            <script src="script.js"></script>
+        </body>
+</html>
